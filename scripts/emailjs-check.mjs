@@ -15,8 +15,8 @@ for (const line of fs.readFileSync(envPath, 'utf8').split(/\r?\n/)) {
 
 const serviceId = env.VITE_EMAILJS_SERVICE_ID;
 const templateId = env.VITE_EMAILJS_TEMPLATE_ID;
-// Optional override so candidate public keys can be tried without editing .env.
-const publicKey = process.argv[2] ?? env.VITE_EMAILJS_PUBLIC_KEY;
+// Optional override so a candidate public key can be tried without editing .env.
+const publicKey = process.argv[2] || env.VITE_EMAILJS_PUBLIC_KEY;
 
 for (const [label, value, prefix] of [
   ['service', serviceId, 'service_'],
