@@ -1,0 +1,5 @@
+# Netlify / Cloudflare Pages SPA fallback.
+#
+# The site is client-routed, so /solutions/ai-agents has no file on disk. Without
+# this rewrite a direct visit or a refresh on any deep link returns 404.
+/*    /index.html   200

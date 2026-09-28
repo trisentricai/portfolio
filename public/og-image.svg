@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7F9FC"/>
+      <stop offset="100%" stop-color="#EEF3FF"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2457FF"/>
+      <stop offset="100%" stop-color="#6D8DFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g stroke="#2457FF" stroke-opacity="0.07">
+    <path d="M0 90H1200M0 180H1200M0 270H1200M0 360H1200M0 450H1200M0 540H1200"/>
+    <path d="M100 0V630M300 0V630M500 0V630M700 0V630M900 0V630M1100 0V630"/>
+  </g>
+  <circle cx="1010" cy="140" r="230" fill="#2457FF" opacity="0.09"/>
+  <circle cx="150" cy="560" r="170" fill="#C8FF3D" opacity="0.10"/>
+  <g transform="translate(96 150)">
+    <path d="M40 8 L76 64 H4 Z" fill="none" stroke="url(#brand)" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M40 26 L58 58 H22 Z" fill="none" stroke="#6D8DFF" stroke-width="3" stroke-linejoin="round" opacity="0.6"/>
+    <circle cx="40" cy="8" r="7" fill="#2457FF"/>
+    <circle cx="76" cy="64" r="7" fill="#2457FF"/>
+    <circle cx="4" cy="64" r="7" fill="#C8FF3D"/>
+    <text x="104" y="56" font-family="Inter, Segoe UI, sans-serif" font-size="52" font-weight="600" fill="#101828" letter-spacing="-1.5">TRISENTRI</text>
+    <text x="106" y="88" font-family="Inter, Segoe UI, sans-serif" font-size="21" font-weight="500" fill="#2457FF" letter-spacing="7">AI</text>
+  </g>
+  <text x="96" y="380" font-family="Inter, Segoe UI, sans-serif" font-size="76" font-weight="600" fill="#101828" letter-spacing="-3">Engineering Intelligence</text>
+  <text x="96" y="466" font-family="Inter, Segoe UI, sans-serif" font-size="76" font-weight="600" fill="#2457FF" letter-spacing="-3">for the Real World.</text>
+  <text x="96" y="524" font-family="Inter, Segoe UI, sans-serif" font-size="26" fill="#667085">AI systems · Automation · Data engineering · Custom software</text>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "name": "Trisentri AI",
+  "short_name": "Trisentri",
+  "description": "Artificial intelligence, engineering and enterprise technology company.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F9FC",
+  "theme_color": "#2457FF",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

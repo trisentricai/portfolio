@@ -1,0 +1,37 @@
+{
+  "name": "trisentri-ai-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Corporate website for Trisentri AI — intelligent software, AI systems, automation platforms and data-driven engineering.",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run sitemap && tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit false --emitDeclarationOnly false",
+    "check": "node scripts/check-integrity.mjs",
+    "a11y": "node scripts/a11y-check.mjs",
+    "sitemap": "node scripts/generate-sitemap.mjs"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^8.17.10",
+    "framer-motion": "^11.11.17",
+    "lucide-react": "^0.454.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.169.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}
