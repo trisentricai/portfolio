@@ -12,15 +12,39 @@ import { CONFIG } from '@/lib/config';
 import type { ContactPayload } from '@/lib/contact';
 
 /** EmailJS rejects with a `status` and a `text` body; normalise both. */
+/**
+ * EmailJS rejects with a `status` and a `text` body. The text is the only part
+ * that names the actual fault ("Template not found", "Variables not provided:
+ * to_email"), so it is always surfaced and logged rather than replaced by a
+ * generic message that would hide the cause.
+ */
 function describeError(error: unknown): string {
   if (typeof error === 'object' && error !== null) {
     const { status, text } = error as { status?: number; text?: string };
-    if (status === 400) return 'EmailJS rejected the request (400). Check the service, template and public key.';
+    if (status || text) {
+      console.error('[contact] EmailJS delivery failed', { status, text });
+    }
+
+    if (text) {
+      switch (status) {
+        case 400:
+          return `Email delivery was rejected (400): ${text}`;
+        case 401:
+          return `Email delivery was rejected (401): ${text}. Check the public key.`;
+        case 402:
+          return `Email delivery was blocked (402): ${text}. The account may be over its send limit.`;
+        case 429:
+          return `Too many submissions (429): ${text}. Please try again later.`;
+        default:
+          return `Email delivery failed (${status ?? 'no status'}): ${text}`;
+      }
+    }
+
+    if (status === 400) return 'Email delivery was rejected (400). Check the service ID, template ID and public key.';
     if (status === 401 || status === 402) {
-      return 'EmailJS refused the request — the account is over its monthly send limit or the key is invalid.';
+      return 'Email delivery was refused — the account is over its monthly send limit or the key is invalid.';
     }
     if (status === 429) return 'Too many submissions from this address. Please try again later.';
-    if (text) return `Email delivery failed (${status ?? 'no status'}): ${text}`;
   }
   return 'Email delivery failed. Please try again, or email us directly.';
 }

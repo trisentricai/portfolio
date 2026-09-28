@@ -53,3 +53,26 @@ export const hasContactEndpoint = Boolean(CONFIG.contactEndpoint);
 
 /** True only when all three EmailJS values are present. */
 export const hasEmailJs = Boolean(emailjs.serviceId && emailjs.templateId && emailjs.publicKey);
+
+/**
+ * The three EmailJS values are easy to paste into the wrong slot, and a
+ * mismatched one fails as an opaque "service ID not found" 400 at submit time
+ * — long after the mistake was made. EmailJS formats them predictably, so the
+ * obvious swaps are caught here instead. Dev-only: it costs nothing in
+ * production and never blocks the form.
+ */
+if (import.meta.env.DEV && hasEmailJs) {
+  if (!emailjs.serviceId.startsWith('service_')) {
+    console.error(
+      `[contact] VITE_EMAILJS_SERVICE_ID looks wrong ("${emailjs.serviceId}"). ` +
+        'A service ID always begins with "service_". A short key-like string in this ' +
+        'slot is usually the public key — find the real one under Email Services.',
+    );
+  }
+  if (!emailjs.templateId.startsWith('template_')) {
+    console.error(
+      `[contact] VITE_EMAILJS_TEMPLATE_ID looks wrong ("${emailjs.templateId}"). ` +
+        'A template ID always begins with "template_".',
+    );
+  }
+}

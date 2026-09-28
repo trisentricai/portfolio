@@ -300,15 +300,27 @@ export function ContactForm() {
               maxLength={4000}
             />
 
-            {/* Honeypot — visually and semantically hidden from users. */}
+            {/* Honeypot — visually and semantically hidden from users.
+                `autoComplete="off"` alone is not enough: several password
+                managers ignore it and happily fill a field named "website".
+                A filled honeypot makes submitContact drop the submission while
+                still reporting success, so a real enquiry would vanish without
+                trace. The data-* attributes opt out of the major managers, and
+                the name is deliberately not a plausible autofill target. */}
             <div className="absolute left-[-9999px] h-px w-px overflow-hidden" aria-hidden="true">
-              <label htmlFor="company-website">Leave this field empty</label>
+              <label htmlFor="company-url-trap">Leave this field empty</label>
               <input
-                id="company-website"
-                name="website"
+                id="company-url-trap"
+                name="business_site_url_trap"
                 type="text"
                 tabIndex={-1}
                 autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck={false}
+                data-1p-ignore
+                data-lpignore="true"
+                data-form-type="other"
                 value={values.website}
                 onChange={update('website')}
               />
