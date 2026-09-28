@@ -1,7 +1,19 @@
 /**
  * One-shot live check against the EmailJS REST API using the credentials in
- * .env. Mirrors exactly what src/lib/emailjs.ts sends, so a success here means
- * the real form will succeed.
+ * .env. Mirrors what src/lib/emailjs.ts sends.
+ *
+ * ---------------------------------------------------------------------------
+ * LIMITATION — read before trusting a FAIL here.
+ *
+ * EmailJS rejects requests that do not come from a browser and returns
+ * "The Public Key is required" regardless of whether the key is valid. Verified
+ * on 2026-09-29: a well-formed request (user_id present and serialised
+ * correctly) fails identically with no Origin header, with three different
+ * Origin values, and with browser-like User-Agent/Sec-Fetch headers.
+ *
+ * So a PASS here is meaningful. A FAIL is NOT evidence of a bad credential.
+ * Only a submission through the real form in a browser settles it.
+ * ---------------------------------------------------------------------------
  */
 import fs from 'node:fs';
 import path from 'node:path';
