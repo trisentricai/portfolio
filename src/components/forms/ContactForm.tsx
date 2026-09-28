@@ -1,9 +1,16 @@
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, AlertCircle, Loader2, Send, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { TextField, TextAreaField, SelectField } from '@/components/forms/Field';
-import { submitContact, hasContactEndpoint, type SubmitState, type ContactPayload } from '@/lib/contact';
+import {
+  submitContact,
+  CONTACT_PROVIDER,
+  hasContactDelivery,
+  type SubmitState,
+  type ContactPayload,
+  type ContactProvider,
+} from '@/lib/contact';
 import { SITE } from '@/lib/seo';
 import { SOLUTIONS } from '@/data/solutions';
 import { EASE_PREMIUM } from '@/lib/motion';
@@ -79,11 +86,20 @@ function validate(values: FormState): Errors {
   return errors;
 }
 
+/** What the visitor is told about their message, per active transport. */
+const DELIVERY_NOTE: Record<ContactProvider, string> = {
+  emailjs: 'Your details are used only to respond to this enquiry.',
+  endpoint: 'Your details are used only to respond to this enquiry.',
+  demo: 'Demonstration mode: this form validates and confirms locally, but no message is transmitted because no delivery method is configured.',
+};
+
 export function ContactForm() {
   const [values, setValues] = useState<FormState>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
   const [state, setState] = useState<SubmitState>('idle');
   const [feedback, setFeedback] = useState<{ ok: boolean; message: string; delivered: boolean } | null>(null);
+  /** When the form was first shown — used to reject instant (bot) submissions. */
+  const mountedAt = useRef(Date.now());
 
   const update = (key: keyof FormState) => (event: { target: { value: string } }) => {
     setValues((previous) => ({ ...previous, [key]: event.target.value }));
@@ -120,7 +136,7 @@ export function ContactForm() {
       website: values.website,
     };
 
-    const result = await submitContact(payload);
+    const result = await submitContact(payload, mountedAt.current);
 
     setState(result.ok ? 'success' : 'error');
     setFeedback({ ok: result.ok, message: result.message, delivered: result.delivered });
@@ -161,7 +177,11 @@ export function ContactForm() {
             </span>
 
             <h2 className="mt-6 font-display text-[1.625rem] font-semibold tracking-[-0.02em]">
-              {feedback?.delivered ? 'Message sent.' : 'Thanks — that worked.'}
+              {feedback?.delivered
+                ? 'Message sent.'
+                : hasContactDelivery
+                  ? 'Received — we will be in touch.'
+                  : 'Nothing was sent (demo mode).'}
             </h2>
 
             <p className="mx-auto mt-3 max-w-md text-[0.9375rem] leading-relaxed text-ink-soft">{feedback?.message}</p>
@@ -311,11 +331,7 @@ export function ContactForm() {
             </AnimatePresence>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-sm text-[0.8125rem] leading-relaxed text-ink-muted">
-                {hasContactEndpoint
-                  ? 'Your details are used only to respond to this enquiry.'
-                  : 'Demonstration mode: this form validates and confirms locally, but no message is transmitted because no delivery endpoint is configured.'}
-              </p>
+              <p className="max-w-sm text-[0.8125rem] leading-relaxed text-ink-muted">{DELIVERY_NOTE[CONTACT_PROVIDER]}</p>
 
               <Button type="submit" size="lg" withArrow disabled={state === 'submitting'} className="shrink-0">
                 {state === 'submitting' ? (

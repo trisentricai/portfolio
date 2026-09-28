@@ -14,6 +14,7 @@
     "sitemap": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-three/fiber": "^8.17.10",
     "framer-motion": "^11.11.17",
     "lucide-react": "^0.454.0",

@@ -1,14 +1,18 @@
 /**
  * Contact submission service.
  *
- * Two paths:
- *  1. **Live** — `VITE_CONTACT_ENDPOINT` is set: JSON is POSTed there with a
- *     timeout and an abort guard.
- *  2. **Demo** — no endpoint configured: the request is simulated with a short
+ * Three delivery paths, picked automatically from configuration:
+ *  1. **EmailJS** — all three `VITE_EMAILJS_*` values set: mail is sent through
+ *     the visitor's own browser.
+ *  2. **Endpoint** — `VITE_CONTACT_ENDPOINT` set: JSON is POSTed to your own
+ *     backend with a timeout and an abort guard. Takes priority over EmailJS
+ *     when both are configured, since it keeps the API key server-side.
+ *  3. **Demo** — nothing configured: the request is simulated with a short
  *     delay and resolves as accepted *without* claiming a message was sent.
  *     The UI tells the visitor this honestly.
  */
-import { CONFIG, hasContactEndpoint } from '@/lib/config';
+import { CONFIG, hasContactEndpoint, hasEmailJs } from '@/lib/config';
+import { sendViaEmailJs } from '@/lib/emailjs';
 
 export interface ContactPayload {
   name: string;
@@ -24,9 +28,22 @@ export interface ContactPayload {
 
 export type SubmitState = 'idle' | 'submitting' | 'success' | 'error';
 
+/** Which transport a submission will use. Surfaced in the UI so the visitor is
+ *  never told a message was sent when it was not. */
+export type ContactProvider = 'emailjs' | 'endpoint' | 'demo';
+
+export const CONTACT_PROVIDER: ContactProvider = hasContactEndpoint
+  ? 'endpoint'
+  : hasEmailJs
+    ? 'emailjs'
+    : 'demo';
+
+/** True when a submission will actually reach a human. */
+export const hasContactDelivery = CONTACT_PROVIDER !== 'demo';
+
 export interface SubmitResult {
   ok: boolean;
-  /** True when the message was delivered to a real endpoint. */
+  /** True when the message was delivered to a real transport. */
   delivered: boolean;
   message: string;
   /** Field-level errors returned by the endpoint, if any. */
@@ -41,20 +58,25 @@ function delay(ms: number): Promise<void> {
   });
 }
 
-export async function submitContact(payload: ContactPayload): Promise<SubmitResult> {
+export async function submitContact(payload: ContactPayload, startedAt = Date.now()): Promise<SubmitResult> {
   // Honeypot: never respond with an error, just drop it.
   if (payload.website) {
     await delay(400);
     return { ok: true, delivered: false, message: 'Thank you — your message has been received.' };
   }
 
-  if (!hasContactEndpoint) {
+  if (CONTACT_PROVIDER === 'emailjs') {
+    const result = await sendViaEmailJs(payload, startedAt);
+    return { ok: result.ok, delivered: result.ok, message: result.message };
+  }
+
+  if (CONTACT_PROVIDER === 'demo') {
     await delay(CONFIG.demoLatencyMs);
     return {
       ok: true,
       delivered: false,
       message:
-        'This is a demonstration submission — no message was sent because no delivery endpoint is configured. Add VITE_CONTACT_ENDPOINT to enable real delivery.',
+        'This is a demonstration submission — no message was sent because no delivery method is configured. Add the EmailJS or endpoint values to enable real delivery.',
     };
   }
 
@@ -117,4 +139,4 @@ export async function submitContact(payload: ContactPayload): Promise<SubmitResu
   }
 }
 
-export { hasContactEndpoint };
+export { hasContactEndpoint, hasEmailJs };
