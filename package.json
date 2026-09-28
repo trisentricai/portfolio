@@ -11,7 +11,8 @@
     "typecheck": "tsc -b --noEmit false --emitDeclarationOnly false",
     "check": "node scripts/check-integrity.mjs",
     "a11y": "node scripts/a11y-check.mjs",
-    "sitemap": "node scripts/generate-sitemap.mjs"
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "check:emailjs": "node scripts/emailjs-check.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
