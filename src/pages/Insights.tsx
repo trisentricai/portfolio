@@ -17,7 +17,7 @@ export default function Insights() {
   usePageMeta({
     title: 'Insights',
     description:
-      'Writing from the Trisentri AI engineering team on machine learning, generative AI, computer vision, data engineering and building AI systems that survive production.',
+      'Writing from the Trisentric AI engineering team on machine learning, generative AI, computer vision, data engineering and building AI systems that survive production.',
     path: '/insights',
     jsonLd: [
       breadcrumbJsonLd([
@@ -27,14 +27,14 @@ export default function Insights() {
       {
         '@context': 'https://schema.org',
         '@type': 'Blog',
-        name: 'Trisentri AI Insights',
+        name: 'Trisentric AI Insights',
         url: absoluteUrl('/insights'),
         blogPost: ARTICLES.map((article) => ({
           '@type': 'BlogPosting',
           headline: article.title,
           url: absoluteUrl(`/insights/${article.slug}`),
           datePublished: article.date,
-          author: { '@type': 'Organization', name: 'Trisentri AI' },
+          author: { '@type': 'Organization', name: 'Trisentric AI' },
         })),
       },
     ],

@@ -93,7 +93,7 @@ export async function submitContact(payload: ContactPayload, startedAt = Date.no
       },
       body: JSON.stringify({
         ...payload,
-        source: 'trisentri.ai',
+        source: 'trisentricai.in',
         submittedAt: new Date().toISOString(),
       }),
       signal: controller.signal,

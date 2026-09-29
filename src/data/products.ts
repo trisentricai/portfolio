@@ -2,8 +2,8 @@
  * Product platform concepts.
  *
  * IMPORTANT — these are reference architectures and product *concepts* used to
- * demonstrate how Trisentri AI composes its capabilities. They are not released
- * Trisentri AI products, and no availability, pricing or customer claim is made.
+ * demonstrate how Trisentric AI composes its capabilities. They are not released
+ * Trisentric AI products, and no availability, pricing or customer claim is made.
  * Each record carries `example: true`, which renders a visible disclosure in the
  * UI. Replace the copy and set `example: false` when a real product ships.
  */

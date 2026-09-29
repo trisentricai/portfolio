@@ -1,7 +1,7 @@
 /**
  * Technology ecosystem.
  *
- * These are Trisentri AI's engineering capabilities, not a claim of exclusivity
+ * These are Trisentric AI's engineering capabilities, not a claim of exclusivity
  * or a certification. The copy is deliberately framed as "what we build with".
  */
 

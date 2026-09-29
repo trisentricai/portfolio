@@ -3,7 +3,7 @@
  *
  * Structure is intentionally block-based (see `ArticleBlock`) so a headless CMS
  * can return the same shape without touching the renderer. Articles are authored
- * as Trisentri AI team pieces — no external authors, clients or results are
+ * as Trisentric AI team pieces — no external authors, clients or results are
  * referenced.
  */
 
@@ -41,7 +41,7 @@ export const ARTICLES: Article[] = [
     title: 'RAG is a data problem before it is a prompt problem',
     dek: 'Most retrieval-augmented generation projects fail on retrieval quality, not generation quality. Fixing the index is nearly always the higher-leverage move.',
     category: 'AI',
-    author: 'Trisentri AI · Applied AI',
+    author: 'Trisentric AI · Applied AI',
     authorRole: 'Applied AI practice',
     date: '2026-08-18',
     readMinutes: 8,
@@ -135,7 +135,7 @@ def retrieval_report(cases, retriever, k=8):
     title: 'Build the evaluation set before you build the interface',
     dek: 'The single highest-leverage decision in an AI product is the one made first: defining how quality will be measured.',
     category: 'Engineering',
-    author: 'Trisentri AI · Platform Engineering',
+    author: 'Trisentric AI · Platform Engineering',
     authorRole: 'Platform engineering practice',
     date: '2026-07-29',
     readMinutes: 7,
@@ -214,7 +214,7 @@ def weighted_error_rate(results):
     title: 'Computer vision fails in the conditions, not the benchmark',
     dek: 'Model quality is decided long before training starts — by lighting, camera placement, and whether anyone measured what the sensor actually captures.',
     category: 'Research',
-    author: 'Trisentri AI · Vision Practice',
+    author: 'Trisentric AI · Vision Practice',
     authorRole: 'Computer vision practice',
     date: '2026-07-11',
     readMinutes: 9,
@@ -285,7 +285,7 @@ for precision in ("fp32", "fp16", "int8"):
     title: 'What enterprise buyers are actually evaluating in an AI system',
     dek: 'Model quality is table stakes in an enterprise evaluation. The differentiators are control, traceability and the ability to say no.',
     category: 'Technology',
-    author: 'Trisentri AI · Solutions',
+    author: 'Trisentric AI · Solutions',
     authorRole: 'Solutions practice',
     date: '2026-06-24',
     readMinutes: 6,
@@ -331,7 +331,7 @@ for precision in ("fp32", "fp16", "int8"):
     title: 'Data contracts and the end of the "who broke production" meeting',
     dek: 'When analytics disagreements get resolved in a spreadsheet, the real problem is that ownership ended at the database boundary.',
     category: 'Engineering',
-    author: 'Trisentri AI · Data Engineering',
+    author: 'Trisentric AI · Data Engineering',
     authorRole: 'Data engineering practice',
     date: '2026-06-05',
     readMinutes: 7,
@@ -357,7 +357,7 @@ for precision in ("fp32", "fp16", "int8"):
         language: 'yaml',
         code: `# contracts/orders.yaml
 dataset: orders
-owner: commerce-analytics@trisentri.ai
+owner: commerce-analytics@trisentricai.in
 description: Canonical order events, deduplicated by order_id.
 grain: one row per order
 update_cadence: hourly
@@ -401,7 +401,7 @@ columns:
     title: 'How much autonomy should an AI agent actually have?',
     dek: 'Agent reliability is a scoping problem, not a prompting problem. Narrow the blast radius and useful autonomy gets much easier.',
     category: 'AI',
-    author: 'Trisentri AI · Agent Systems',
+    author: 'Trisentric AI · Agent Systems',
     authorRole: 'Agent systems practice',
     date: '2026-05-16',
     readMinutes: 8,

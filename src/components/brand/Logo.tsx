@@ -11,7 +11,7 @@ export interface LogoProps {
 }
 
 /**
- * The Trisentri mark: three nodes of a triangle, two blue and one lime.
+ * The Trisentric mark: three nodes of a triangle, two blue and one lime.
  * Built from the same geometry as the favicon so the identity is consistent
  * at every size. No external logo asset is required.
  */
@@ -21,7 +21,7 @@ export function LogoMark({ className, animated = true }: { className?: string; a
       viewBox="0 0 32 32"
       fill="none"
       role="img"
-      aria-label="Trisentri AI"
+      aria-label="Trisentric AI"
       className={cn('h-8 w-8 shrink-0', className)}
     >
       <defs>
@@ -77,7 +77,7 @@ export function Logo({ className, markOnly = false, inverted = false, asLink = t
               inverted ? 'text-white' : 'text-ink',
             )}
           >
-            Trisentri
+            Trisentric
           </span>
           <span
             className={cn(
@@ -97,7 +97,7 @@ export function Logo({ className, markOnly = false, inverted = false, asLink = t
   return (
     <Link
       to="/"
-      aria-label="Trisentri AI — home"
+      aria-label="Trisentric AI — home"
       className="inline-flex rounded-lg transition-opacity duration-200 hover:opacity-85"
     >
       {content}

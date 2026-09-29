@@ -9,16 +9,16 @@
 import { useEffect } from 'react';
 
 export const SITE = {
-  name: 'Trisentri AI',
-  shortName: 'Trisentri',
-  legalName: 'Trisentri AI',
+  name: 'Trisentric AI',
+  shortName: 'Trisentric',
+  legalName: 'Trisentric AI',
   tagline: 'Engineering Intelligence for the Real World.',
   description:
-    'Trisentri AI builds intelligent software, AI systems, automation platforms and data-driven solutions for complex real-world problems.',
+    'Trisentric AI builds intelligent software, AI systems, automation platforms and data-driven solutions for complex real-world problems.',
   /** Used to build canonical + OG URLs. Configure per environment. */
-  url: (import.meta.env.VITE_SITE_URL as string | undefined) ?? 'https://www.trisentri.ai',
+  url: (import.meta.env.VITE_SITE_URL as string | undefined) ?? 'https://trisentricai.in',
   locale: 'en_US',
-  email: (import.meta.env.VITE_CONTACT_EMAIL as string | undefined) ?? 'hello@trisentri.ai',
+  email: (import.meta.env.VITE_CONTACT_EMAIL as string | undefined) ?? 'info@trisentricai.in',
   /**
    * Social profiles are opt-in. Nothing is rendered — in the footer or in the
    * Organization graph — until a real profile URL is configured, so the site

@@ -45,7 +45,7 @@ export default function SolutionDetail() {
             serviceType: solution.title,
             description: solution.description,
             url: absoluteUrl(`/solutions/${solution.slug}`),
-            provider: { '@type': 'Organization', name: 'Trisentri AI', url: absoluteUrl('/') },
+            provider: { '@type': 'Organization', name: 'Trisentric AI', url: absoluteUrl('/') },
             areaServed: 'Worldwide',
           },
         ]

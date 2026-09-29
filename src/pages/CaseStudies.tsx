@@ -75,7 +75,7 @@ export default function CaseStudies() {
           <Breadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Case Studies' }]} className="mb-10" />
 
           <Disclosure title="Illustrative engagements — not client records" tone="warn">
-            These case studies describe Trisentri AI's approach and architecture using realistic problem shapes. They
+            These case studies describe Trisentric AI's approach and architecture using realistic problem shapes. They
             are placeholders: no client is named, no engagement is claimed, and the figures shown are targets agreed at
             discovery rather than measured results. Nothing here should be read as a testimonial or a performance claim.
           </Disclosure>

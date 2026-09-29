@@ -47,7 +47,7 @@ export default function Contact() {
   usePageMeta({
     title: 'Contact',
     description:
-      'Start a conversation with Trisentri AI about an AI, automation or data engineering project. Every enquiry is read by an engineer on the team.',
+      'Start a conversation with Trisentric AI about an AI, automation or data engineering project. Every enquiry is read by an engineer on the team.',
     path: '/contact',
     jsonLd: [
       organizationJsonLd(),
@@ -59,11 +59,11 @@ export default function Contact() {
       {
         '@context': 'https://schema.org',
         '@type': 'ContactPage',
-        name: 'Contact Trisentri AI',
+        name: 'Contact Trisentric AI',
         url: absoluteUrl('/contact'),
         mainEntity: {
           '@type': 'Organization',
-          name: 'Trisentri AI',
+          name: 'Trisentric AI',
           email: CONFIG.contactEmail,
           contactPoint: {
             '@type': 'ContactPoint',

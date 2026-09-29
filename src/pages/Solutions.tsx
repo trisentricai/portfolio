@@ -24,7 +24,7 @@ export default function Solutions() {
   usePageMeta({
     title: 'AI Solutions & Services',
     description:
-      'Explore Trisentri AI solutions: machine learning, generative AI, computer vision, intelligent automation, data analytics, AI agents and custom AI engineering.',
+      'Explore Trisentric AI solutions: machine learning, generative AI, computer vision, intelligent automation, data analytics, AI agents and custom AI engineering.',
     path: '/solutions',
     jsonLd: [
       organizationJsonLd(),
@@ -35,7 +35,7 @@ export default function Solutions() {
       {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        name: 'Trisentri AI solutions',
+        name: 'Trisentric AI solutions',
         itemListElement: SOLUTIONS.map((solution, index) => ({
           '@type': 'ListItem',
           position: index + 1,

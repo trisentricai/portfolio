@@ -14,7 +14,7 @@ export interface DisclosureProps {
  *
  * Used on every page that carries illustrative content (case studies, product
  * concepts) so placeholder material can never be mistaken for a factual claim
- * about Trisentri AI or its clients.
+ * about Trisentric AI or its clients.
  */
 export function Disclosure({ title, children, className, tone = 'info' }: DisclosureProps) {
   return (

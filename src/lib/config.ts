@@ -35,13 +35,13 @@ export const CONFIG = {
   contactApiKey: text(env.VITE_CONTACT_API_KEY),
   emailjs,
   /** Public site origin, used for canonical URLs and Open Graph. */
-  siteUrl: text(env.VITE_SITE_URL) || 'https://www.trisentri.ai',
-  contactEmail: text(env.VITE_CONTACT_EMAIL) || 'hello@trisentri.ai',
+  siteUrl: text(env.VITE_SITE_URL) || 'https://trisentricai.in',
+  contactEmail: text(env.VITE_CONTACT_EMAIL) || 'info@trisentricai.in',
   /**
    * Careers mailbox. Falls back to the general contact address rather than
    * guessing a second address that may not exist.
    */
-  careersEmail: text(env.VITE_CAREERS_EMAIL) || text(env.VITE_CONTACT_EMAIL) || 'hello@trisentri.ai',
+  careersEmail: text(env.VITE_CAREERS_EMAIL) || text(env.VITE_CONTACT_EMAIL) || 'info@trisentricai.in',
   /** Simulated latency for the demo path so loading states are observable. */
   demoLatencyMs: Number(env.VITE_DEMO_LATENCY_MS ?? 1100),
   /** Feature flag: the hero 3D visualization is opt-out on low-power devices. */

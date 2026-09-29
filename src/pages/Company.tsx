@@ -15,7 +15,7 @@ export default function Company() {
   usePageMeta({
     title: 'Company',
     description:
-      'Trisentri AI is an engineering company focused on artificial intelligence, automation and data systems — our mission, engineering philosophy, values, culture and team structure.',
+      'Trisentric AI is an engineering company focused on artificial intelligence, automation and data systems — our mission, engineering philosophy, values, culture and team structure.',
     path: '/company',
     jsonLd: [
       organizationJsonLd(),
@@ -26,9 +26,9 @@ export default function Company() {
       {
         '@context': 'https://schema.org',
         '@type': 'AboutPage',
-        name: 'About Trisentri AI',
+        name: 'About Trisentric AI',
         url: absoluteUrl('/company'),
-        mainEntity: { '@type': 'Organization', name: 'Trisentri AI', url: absoluteUrl('/') },
+        mainEntity: { '@type': 'Organization', name: 'Trisentric AI', url: absoluteUrl('/') },
       },
     ],
   });
@@ -243,7 +243,7 @@ export default function Company() {
                     work described above sounds like what you want to do, send a note and we will keep it on file.
                   </p>
                   <a
-                    href={`mailto:${CONFIG.careersEmail}?subject=Working%20at%20Trisentri%20AI`}
+                    href={`mailto:${CONFIG.careersEmail}?subject=Working%20at%20Trisentric%20AI`}
                     className="mt-6 inline-flex items-center gap-2 text-[0.9375rem] font-medium text-brand transition-colors hover:text-brand-700"
                   >
                     <Mail className="h-4 w-4" aria-hidden="true" />

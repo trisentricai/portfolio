@@ -1,9 +1,9 @@
 {
-  "name": "trisentri-ai-website",
+  "name": "trisentric-ai-website",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Corporate website for Trisentri AI — intelligent software, AI systems, automation platforms and data-driven engineering.",
+  "description": "Corporate website for Trisentric AI — intelligent software, AI systems, automation platforms and data-driven engineering.",
   "scripts": {
     "dev": "vite",
     "build": "npm run sitemap && tsc -b && vite build",

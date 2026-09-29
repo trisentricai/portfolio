@@ -12,7 +12,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const SITE_URL = (process.env.VITE_SITE_URL ?? 'https://www.trisentri.ai').replace(/\/$/, '');
+const SITE_URL = (process.env.VITE_SITE_URL ?? 'https://trisentricai.in').replace(/\/$/, '');
 
 /** Routes that exist but are not generated from a slug list. */
 const STATIC_ROUTES = [

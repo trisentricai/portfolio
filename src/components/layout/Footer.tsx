@@ -100,7 +100,7 @@ export function Footer() {
         <div className="border-t border-line">
           <div className="container-page flex flex-col gap-5 py-7 sm:flex-row sm:items-center sm:justify-between">
             <p className="font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-ink-muted">
-              © {YEAR} Trisentri AI. All rights reserved.
+              © {YEAR} Trisentric AI. All rights reserved.
             </p>
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
@@ -125,7 +125,7 @@ export function Footer() {
                       <a
                         href={social.href}
                         {...(isMail ? {} : { target: '_blank', rel: 'noreferrer noopener' })}
-                        aria-label={`Trisentri AI on ${social.label}`}
+                        aria-label={`Trisentric AI on ${social.label}`}
                         className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink-soft transition-all duration-200 hover:border-brand hover:bg-brand hover:text-white"
                       >
                         <social.icon className="h-4 w-4" aria-hidden="true" />

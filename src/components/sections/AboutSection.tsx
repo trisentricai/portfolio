@@ -19,7 +19,7 @@ export function AboutSection() {
             <SectionHeading eyebrow={HOME_ABOUT.eyebrow} title={HOME_ABOUT.heading} />
             <Reveal delay={0.1} className="mt-9">
               <ButtonLink to="/company" variant="secondary" withArrow>
-                More about Trisentri AI
+                More about Trisentric AI
               </ButtonLink>
             </Reveal>
           </div>

@@ -47,14 +47,14 @@ if (!publicKey) {
 const templateParams = {
   from_name: 'Automated delivery test',
   reply_to: 'delivery-test@example.com',
-  company: 'Trisentric AI',
+  company: 'Trisentricc AI',
   service: 'ai-agents',
   budget: 'Not specified',
   timeline: 'Not specified',
   message:
     'This is an automated test of the contact form delivery path. If you are reading it in your inbox, EmailJS is configured correctly and the live site form will reach you.',
   submitted_at: new Date().toISOString(),
-  page_url: 'https://www.trisentri.ai/contact',
+  page_url: 'https://trisentricai.in/contact',
 };
 
 const body = new URLSearchParams({

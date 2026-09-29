@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Trisentri AI design system.
+ * Trisentric AI design system.
  *
  * The palette is intentionally small and brand-locked:
  *   brand   #2457FF  electric blue  (primary, structural)

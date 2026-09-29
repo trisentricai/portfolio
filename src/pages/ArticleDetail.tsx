@@ -42,7 +42,7 @@ export default function ArticleDetail() {
             author: { '@type': 'Organization', name: article.author, jobTitle: article.authorRole },
             publisher: {
               '@type': 'Organization',
-              name: 'Trisentri AI',
+              name: 'Trisentric AI',
               logo: { '@type': 'ImageObject', url: absoluteUrl('/favicon.svg') },
             },
             keywords: article.tags.join(', '),

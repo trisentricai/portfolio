@@ -17,7 +17,7 @@ export default function Technologies() {
   usePageMeta({
     title: 'Technologies',
     description:
-      'The Trisentri AI technology ecosystem — machine learning, generative AI, computer vision, data engineering, cloud and software engineering, with the tools behind each capability.',
+      'The Trisentric AI technology ecosystem — machine learning, generative AI, computer vision, data engineering, cloud and software engineering, with the tools behind each capability.',
     path: '/technologies',
     jsonLd: [
       breadcrumbJsonLd([

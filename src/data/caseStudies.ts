@@ -2,7 +2,7 @@
  * Case studies.
  *
  * IMPORTANT — placeholder content.
- * These entries document *structure and approach only*. No real Trisentri AI
+ * These entries document *structure and approach only*. No real Trisentric AI
  * client, engagement, metric or testimonial is represented here. Every record
  * carries `placeholder: true`, which renders a visible disclosure banner in the
  * UI, and the `results` field is scoped as *targets agreed at discovery* rather

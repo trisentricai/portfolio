@@ -142,10 +142,10 @@ export const PROCESS: ProcessStep[] = [
 /* -------------------------------------------------------------------------- */
 
 export const HOME_ABOUT = {
-  eyebrow: 'About Trisentri',
+  eyebrow: 'About Trisentric',
   heading: 'An engineering company, organised around intelligence.',
   paragraphs: [
-    'Trisentri AI was built by engineers who kept watching the same failure repeat: promising AI projects stalled between a convincing prototype and a system that could survive production. The data was incomplete, the evaluation was vibes, and nobody had designed for the day the model was wrong.',
+    'Trisentric AI was built by engineers who kept watching the same failure repeat: promising AI projects stalled between a convincing prototype and a system that could survive production. The data was incomplete, the evaluation was vibes, and nobody had designed for the day the model was wrong.',
     'We work differently. We start with the decision a system has to improve and the data required to make it, define how quality will be measured before we design the interface, and build the evaluation, monitoring and escalation paths as part of the product rather than as an afterthought.',
     'The result is work that keeps working after the engagement ends — systems your engineers understand, documented well enough to extend, and honest about what they do not know.',
   ],
@@ -181,7 +181,7 @@ export const COMPANY = {
   hero: {
     eyebrow: 'Company',
     heading: 'Building the intelligence layer for the next generation of software.',
-    lede: 'Trisentri AI is an engineering company focused on artificial intelligence, automation and data systems. We design, build and operate software that makes real work faster and more precise — and we hand it over documented.',
+    lede: 'Trisentric AI is an engineering company focused on artificial intelligence, automation and data systems. We design, build and operate software that makes real work faster and more precise — and we hand it over documented.',
   },
   mission: {
     title: 'Mission',
@@ -245,7 +245,7 @@ export const COMPANY = {
   },
   team: {
     title: 'Team',
-    body: 'Trisentri AI is a small, senior engineering team spanning applied machine learning, data engineering, platform and product engineering.',
+    body: 'Trisentric AI is a small, senior engineering team spanning applied machine learning, data engineering, platform and product engineering.',
     note: 'Named profiles are not published yet. Roles below describe the structure of the team; individual profiles will be added as they are cleared for publication.',
   },
   roles: [

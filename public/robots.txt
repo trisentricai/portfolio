@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.trisentri.ai/sitemap.xml
+Sitemap: https://trisentricai.in/sitemap.xml

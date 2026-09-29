@@ -39,7 +39,7 @@ export default function CaseStudyDetail() {
             description: study.summary,
             url: absoluteUrl(`/case-studies/${study.slug}`),
             datePublished: `${study.year}-01-01`,
-            author: { '@type': 'Organization', name: 'Trisentri AI' },
+            author: { '@type': 'Organization', name: 'Trisentric AI' },
             isAccessibleForFree: true,
           },
         ]
@@ -74,7 +74,7 @@ export default function CaseStudyDetail() {
           />
 
           <Disclosure title="This is not a client record" tone="warn">
-            Trisentri AI has not published named client engagements. This write-up documents how we would approach a
+            Trisentric AI has not published named client engagements. This write-up documents how we would approach a
             problem of this shape: the challenge framing, the architecture, the technology choices and the measures we
             would agree to track at discovery. The figures below are targets, not achieved results.
           </Disclosure>

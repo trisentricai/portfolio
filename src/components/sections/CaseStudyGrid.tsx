@@ -41,7 +41,7 @@ export function CaseStudyGrid({ limit }: { limit?: number }) {
 
         {limit ? (
           <Disclosure title="Illustrative engagements" className="mt-10">
-            These case studies document Trisentri AI's approach and architecture. They are placeholders, not records of
+            These case studies document Trisentric AI's approach and architecture. They are placeholders, not records of
             client work — no client names, measured results or testimonials are represented. Figures shown are targets
             defined at discovery.
           </Disclosure>

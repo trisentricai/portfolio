@@ -20,7 +20,7 @@ export default function Products() {
   usePageMeta({
     title: 'Products',
     description:
-      'Concept products from Trisentri AI — reference platforms and components for AI engineering. Published as concepts with example scope, not as shipping commercial products.',
+      'Concept products from Trisentric AI — reference platforms and components for AI engineering. Published as concepts with example scope, not as shipping commercial products.',
     path: '/products',
     jsonLd: [
       breadcrumbJsonLd([

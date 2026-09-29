@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  /** Absolute site origin, e.g. `https://www.trisentri.ai`. */
+  /** Absolute site origin, e.g. `https://trisentricai.in`. */
   readonly VITE_SITE_URL?: string;
 
   /** Public address shown in the UI and used for the mailto fallback. */

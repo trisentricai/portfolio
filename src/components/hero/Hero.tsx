@@ -54,7 +54,7 @@ export function Hero() {
             </motion.h1>
 
             <motion.p {...(reduce ? {} : rise(0.16))} className="lede mt-7 max-w-xl">
-              Trisentri AI builds intelligent systems that transform complex data, automate decisions, and turn
+              Trisentric AI builds intelligent systems that transform complex data, automate decisions, and turn
               ambitious ideas into scalable digital products.
             </motion.p>
 
