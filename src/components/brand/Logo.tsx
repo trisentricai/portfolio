@@ -1,13 +1,23 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/cn';
+/* Bundled assets — Vite hashes the filenames, so the immutable /assets/
+   cache header in vercel.json applies and redeploys never serve stale logos. */
+import logoWebp from '@/assets/trisentric-logo.webp';
+import logoPng from '@/assets/trisentric-logo.png';
 
 export interface LogoProps {
   className?: string;
   /** Compact mark only — used in tight spaces. */
   markOnly?: boolean;
-  /** Inverted colours for use on dark surfaces. */
+  /** Inverted colours for use on dark surfaces (SVG lockup only). */
   inverted?: boolean;
   asLink?: boolean;
+  /**
+   * Render the landscape image lockup (mark + wordmark in one asset) instead
+   * of the inline SVG lockup. Full-colour artwork, so `inverted` is ignored.
+   */
+  useImage?: boolean;
 }
 
 /**
@@ -65,30 +75,63 @@ export function LogoMark({ className, animated = true }: { className?: string; a
   );
 }
 
-export function Logo({ className, markOnly = false, inverted = false, asLink = true }: LogoProps) {
+export function Logo({
+  className,
+  markOnly = false,
+  inverted = false,
+  asLink = true,
+  useImage = false,
+}: LogoProps) {
+  /**
+   * If the image asset ever fails to load (renamed, not deployed, blocked),
+   * fall back to the inline SVG lockup rather than an empty navbar.
+   */
+  const [imageFailed, setImageFailed] = useState(false);
+  const showImage = useImage && !markOnly && !imageFailed;
+
   const content = (
     <span className={cn('group/logo inline-flex items-center gap-2.5', className)}>
-      <LogoMark />
-      {!markOnly ? (
-        <span className="flex flex-col leading-none">
-          <span
-            className={cn(
-              'font-display text-[1.0625rem] font-bold uppercase leading-none tracking-[-0.01em]',
-              inverted ? 'text-white' : 'text-ink',
-            )}
-          >
-            Trisentric
-          </span>
-          <span
-            className={cn(
-              'mt-[3px] font-mono text-[0.5625rem] font-medium uppercase leading-none tracking-[0.42em]',
-              inverted ? 'text-brand-300' : 'text-brand',
-            )}
-          >
-            AI
-          </span>
-        </span>
-      ) : null}
+      {showImage ? (
+        /* WebP with a PNG fallback for older browsers. Alt is empty because
+           the wrapping link already carries aria-label="Trisentric AI — home". */
+        <picture>
+          <source srcSet={logoWebp} type="image/webp" />
+          <img
+            src={logoPng}
+            alt=""
+            width={2481}
+            height={532}
+            /* 38px sits optically centred in the 72px nav bar (~177px wide). */
+            className="h-[38px] w-auto"
+            decoding="async"
+            onError={() => setImageFailed(true)}
+          />
+        </picture>
+      ) : (
+        <>
+          <LogoMark />
+          {!markOnly ? (
+            <span className="flex flex-col leading-none">
+              <span
+                className={cn(
+                  'font-display text-[1.0625rem] font-bold uppercase leading-none tracking-[-0.01em]',
+                  inverted ? 'text-white' : 'text-ink',
+                )}
+              >
+                Trisentric
+              </span>
+              <span
+                className={cn(
+                  'mt-[3px] font-mono text-[0.5625rem] font-medium uppercase leading-none tracking-[0.42em]',
+                  inverted ? 'text-brand-300' : 'text-brand',
+                )}
+              >
+                AI
+              </span>
+            </span>
+          ) : null}
+        </>
+      )}
     </span>
   );
 

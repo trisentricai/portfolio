@@ -92,7 +92,7 @@ export function Navbar() {
             className="flex items-center justify-between transition-[height] duration-300 ease-premium"
             style={{ height: 'var(--nav-h)' }}
           >
-            <Logo />
+            <Logo useImage />
 
             {/* ---------------- Desktop links ---------------- */}
             <ul className="hidden items-center gap-0.5 lg:flex">
