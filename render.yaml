@@ -4,9 +4,3 @@ services:
     env: static
     buildCommand: npm run build
     staticPublishPath: dist
-    # SPA fallback: every route serves index.html so client-routed pages
-    # (e.g. /solutions/ai-machine-learning) load on direct visits and refreshes.
-    redirects:
-      - source: "/*"
-        destination: "/index.html"
-        status: 200
