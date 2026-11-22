@@ -20,7 +20,7 @@ export default function Home() {
   usePageMeta({
     title: 'AI Engineering & Intelligent Automation',
     description:
-      'Trisentric AI is an AI engineering company building machine learning, generative AI, computer vision and intelligent automation systems that are measurable, bounded and maintainable in production.',
+      'Trisentric AI builds machine learning, generative AI, computer vision and intelligent automation systems for complex real-world problems.',
   });
 
   return (
